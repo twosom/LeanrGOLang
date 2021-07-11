@@ -1,10 +1,13 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
+
+var name bool = false
 
 func main() {
-	fmt.Println(math.Phi)
+	shortName := "twosom"
+	name = true
+
+	fmt.Println(shortName, name)
+
 }
