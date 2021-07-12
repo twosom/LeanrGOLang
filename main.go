@@ -2,17 +2,23 @@ package main
 
 import "fmt"
 
-func canIDrink(age int) bool {
+/**
+변수에 값이 아닌 메모리 주소를 저장해 참조하게 하고 싶다면
+저장 시에 &를 붙인다.
+예)	a := 2
+	b = &a	<- 변수 b 에는 a 의 메모리 주소가 담긴다.
 
-	switch koreanAge := age + 2; koreanAge {
-	case 10:
-		return false
-	case 18:
-		return true
-	}
-	return false
-}
+메모리 주소를 값으로 바꿔 출력하고 싶다면 * 를 붙인다.
+예)	fmt.Println(*b) <- 변수 b에 저장된 메모리 주소의 값을 출력한다.
 
+변수 b에 담긴 메모리 주소로 a의 값을 간접적으로 변경하고 싶다면
+출력 시와 마찬가지로 *를 붙인다.
+예)	*b = 20 <- 변수 b에 저장된 메모리 주소 값을 이용해 a의 값을 변경한다.
+	결과적으로 a 와 *b 에는 각각 20 이 담기게 된다.
+*/
 func main() {
-	fmt.Println(canIDrink(16))
+	a := 2
+	b := &a
+	*b = 202020
+	fmt.Println(a)
 }
