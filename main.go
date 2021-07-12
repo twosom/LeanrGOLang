@@ -6,34 +6,25 @@ import (
 )
 
 /**
-함수를 작성할 때는 파라미터에 변수 명과 타입을 적고 파라미터 뒤에는 반환형을 적는다.
-만약 파라미터 모두 같은 타입이라면 맨 마지막 파라미터에만 타입을 적어주면 된다.
+Go 에서는 두 개의 변수를 반환할 수 있다. 반환할 타입에 소괄호 () 로 타입을 정해주면 되고,
+반환할 타입에 미리 변수 명을 붙여줄 수도 있다. 그럼 그 변수가 반환할 타입으로 초기화 된다.
 */
-func multiply(a, b int) int {
-	return a * b
+func lenAndUpperWithInitializeVariable(name string) (length int, uppercase string) {
+	/**
+	defer : 해당 메소드가 실행이 다 되고 난 이후에 수행되는 기능. 잘 활용하면 무궁무진하게 쓸 수 있을 것 같다.
+	*/
+	defer fmt.Println("I'm done")
+	length = len(name)
+	uppercase = strings.ToUpper(name)
+	return
 }
 
-func printMyName(firstName, lastName string) {
-	fmt.Println(firstName + lastName)
-}
-
-func lenAndUpper(name string) (int, string) {
+func lenAndUpperWithoutInitializeVariable(name string) (int, string) {
 	return len(name), strings.ToUpper(name)
 }
 
-/**
-여러 값을 한번에 받아오고 싶으면 타입 앞에 (...) 을 붙여준다.
-*/
-func repeatMe(words ...string) {
-	fmt.Println(words)
-}
-
 func main() {
-	fmt.Println(multiply(2, 2))
-	printMyName("two", "som")
-
-	totalLength, upperName := lenAndUpper("twosom")
-	fmt.Println(totalLength, upperName)
-	repeatMe("seoul", "incheon", "pusan", "bucheon", "daegu")
+	totalLength, uppercase := lenAndUpperWithInitializeVariable("twosom")
+	fmt.Print(totalLength, uppercase)
 
 }
