@@ -2,19 +2,19 @@ package main
 
 import "fmt"
 
-func superAdd(numbers ...int) int {
+func canIDrink(age int) bool {
 
-	total := 0
-
-	for _, number := range numbers {
-		total += number
+	/**
+	Go 에서는 if 문 안에 바로 변수를 만들 수 있다. (Variable Expression)
+	if else 절 안에서만 사용한다는 의미이다.
+	그리고 ;(세미콜론) 뒤에 만든 변수를 곧바로 사용할 수 있다.
+	*/
+	if koreanAge := age + 2; koreanAge < 18 {
+		return false
 	}
-
-	return total
+	return true
 }
 
 func main() {
-	result := superAdd(1, 2, 3, 4, 5, 6)
-	fmt.Println(result)
-
+	fmt.Println(canIDrink(16))
 }
