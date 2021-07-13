@@ -3,7 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	names := []string{"one", "two", "three"}
-	names = append(names, "flynn")
-	fmt.Print(names)
+	const NAME = "name"
+	const AGE = "age"
+	twosom := map[string]string{
+		NAME: "twosom",
+		AGE:  "27"}
+
+	fmt.Println(twosom[NAME])
+	fmt.Println(twosom[AGE])
 }
