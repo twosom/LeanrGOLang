@@ -2,13 +2,15 @@ package main
 
 import "fmt"
 
-func main() {
-	const NAME = "name"
-	const AGE = "age"
-	twosom := map[string]string{
-		NAME: "twosom",
-		AGE:  "27"}
+type person struct {
+	name    string
+	age     int
+	favFood []string
+}
 
-	fmt.Println(twosom[NAME])
-	fmt.Println(twosom[AGE])
+func main() {
+	favFood := []string{"Chicken", "Noodle"}
+	twosom := person{name: "twosom", age: 27, favFood: favFood}
+	fmt.Println(twosom.age)
+
 }
